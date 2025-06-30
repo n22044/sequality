@@ -7,6 +7,7 @@ public class CalculateTest {
     @Test
     public void testAppReturnHelloWorld() {
         App classUnderTest = new App();
-        assertEquals("Hello World!", classUnderTest.getGreeting());
+        // P56: GitHub Actions 起動テストのためにコメントを追加
+        assertEquals("P56 Test: Hello World expected", "Hello World!", classUnderTest.getGreeting());
     }
 }
