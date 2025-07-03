@@ -34,4 +34,17 @@ public class CalculateTest {
         Calculate calc = new Calculate();
         calc.divide(10, 0);
     }
+
+    @Test
+    public void testAverage_TwoValues() {
+        Calculate calc = new Calculate();
+        assertEquals(2.5, calc.average(2, 3), 0.01);
+    }
+
+    @Test
+    public void testAverage_ArrayValues() {
+        Calculate calc = new Calculate();
+        int[] values = { 1, 2, 3, 4, 5 };
+        assertEquals(3.0, calc.average(values), 0.01);
+    }
 }

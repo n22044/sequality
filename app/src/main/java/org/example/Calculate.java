@@ -14,9 +14,20 @@ public class Calculate {
     }
 
     public int divide(int x, int y) {
-        if (y == 0) {
-            throw new IllegalArgumentException("0で割ることはできません");
-        }
         return x / y;
+    }
+
+    // ① 2つの整数の平均（doubleで返す）
+    public double average(int x, int y) {
+        return (x + y) / 2.0;
+    }
+
+    // ② 配列の平均（doubleで返す）
+    public double average(int[] values) {
+        int total = 0;
+        for (int v : values) {
+            total += v;
+        }
+        return (double) total / values.length;
     }
 }
