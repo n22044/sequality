@@ -14,20 +14,26 @@ public class Calculate {
     }
 
     public int divide(int x, int y) {
+        if (y == 0) {
+            throw new IllegalArgumentException("0 で割ることはできません");
+        }
         return x / y;
     }
 
-    // ① 2つの整数の平均（doubleで返す）
+    // 課題2：2つの数値の平均を返す
     public double average(int x, int y) {
         return (x + y) / 2.0;
     }
 
-    // ② 配列の平均（doubleで返す）
+    // 課題2：配列内の数値の平均を返す
     public double average(int[] values) {
-        int total = 0;
-        for (int v : values) {
-            total += v;
+        if (values == null || values.length == 0) {
+            throw new IllegalArgumentException("配列が null または空です");
         }
-        return (double) total / values.length;
+        int sum = 0;
+        for (int v : values) {
+            sum += v;
+        }
+        return sum / (double) values.length;
     }
 }
