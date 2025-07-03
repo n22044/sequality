@@ -6,27 +6,32 @@ import static org.junit.Assert.*;
 public class CalculateTest {
 
     @Test
-    public void testSum_TwoAndThree_ReturnsFive() {
+    public void testSum() {
         Calculate calc = new Calculate();
         assertEquals(5, calc.sum(2, 3));
     }
 
     @Test
-    public void testSum_MinusOneAndThree_ReturnsTwo() {
+    public void testSubtract() {
         Calculate calc = new Calculate();
-        assertEquals(2, calc.sum(-1, 3));
+        assertEquals(1, calc.subtract(4, 3));
     }
 
     @Test
-    public void testSum_ZeroAndZero_ReturnsZero() {
+    public void testMultiply() {
         Calculate calc = new Calculate();
-        assertEquals(0, calc.sum(0, 0));
+        assertEquals(12, calc.multiply(3, 4));
     }
 
-    // 🔽 これが p59 に対応する新しいテストケースの追加（変更点）
     @Test
-    public void testSum_TenAndTwenty_ReturnsThirty() {
+    public void testDivide() {
         Calculate calc = new Calculate();
-        assertEquals(30, calc.sum(10, 20));
+        assertEquals(2, calc.divide(6, 3));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivideByZero() {
+        Calculate calc = new Calculate();
+        calc.divide(10, 0);
     }
 }
